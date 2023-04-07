@@ -1,0 +1,21 @@
+[features]
+seeds = false
+
+[programs.localnet]
+vesting = "ByFJEZWdpswG6LiGTCPRJnyAFeUpXcYRe24tzuNPwkMY"
+staking = "2sbJrDbu2ansQ6NZ78GrBb3NYGaGcKpF5WJQCo581uvD"
+
+[programs.devnet]
+vesting = "ByFJEZWdpswG6LiGTCPRJnyAFeUpXcYRe24tzuNPwkMY"
+staking = "2sbJrDbu2ansQ6NZ78GrBb3NYGaGcKpF5WJQCo581uvD"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+# test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/staking.ts"
