@@ -14,14 +14,14 @@ pub mod staking {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        instructions::initialize(ctx)
+        instructions::init(ctx)
     }
 
     pub fn stake(ctx: Context<Stake>, staked_amount: u64) -> Result<()> {
-        instructions::stake(ctx, staked_amount)
+        instructions::stake_amount(ctx, staked_amount)
     }
 
     pub fn unstake(ctx: Context<Unstake>, amount: u64) -> Result<()> {
-        instructions::unstake(ctx, amount)
+        instructions::unstake_amount(ctx, amount)
     }
 }

@@ -1,7 +1,7 @@
 use super::*;
 
 /// Function to initialize the contract
-pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
+pub fn init(ctx: Context<Initialize>) -> Result<()> {
     let global_state = &mut ctx.accounts.global_state;
     global_state.save(ctx.accounts.mint.key());
 

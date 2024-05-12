@@ -9,24 +9,18 @@ export type Staking = {
     },
     {
       "name": "GLOBAL_STATE_TAG",
-      "type": {
-        "defined": "&[u8]"
-      },
-      "value": "b\"global\""
+      "type": "bytes",
+      "value": "[103, 108, 111, 98, 97, 108]"
     },
     {
       "name": "ESCROW_TAG",
-      "type": {
-        "defined": "&[u8]"
-      },
-      "value": "b\"escrow\""
+      "type": "bytes",
+      "value": "[101, 115, 99, 114, 111, 119]"
     },
     {
       "name": "LOCK_STATE_TAG",
-      "type": {
-        "defined": "&[u8]"
-      },
-      "value": "b\"lock\""
+      "type": "bytes",
+      "value": "[108, 111, 99, 107]"
     }
   ],
   "instructions": [
@@ -237,11 +231,6 @@ export type Staking = {
   "errors": [
     {
       "code": 6000,
-      "name": "TokensStillLocked",
-      "msg": "Error: You need to wait at least lockup period."
-    },
-    {
-      "code": 6001,
       "name": "InsufficientFunds",
       "msg": "Error: Your balance is not enough."
     }
@@ -259,24 +248,18 @@ export const IDL: Staking = {
     },
     {
       "name": "GLOBAL_STATE_TAG",
-      "type": {
-        "defined": "&[u8]"
-      },
-      "value": "b\"global\""
+      "type": "bytes",
+      "value": "[103, 108, 111, 98, 97, 108]"
     },
     {
       "name": "ESCROW_TAG",
-      "type": {
-        "defined": "&[u8]"
-      },
-      "value": "b\"escrow\""
+      "type": "bytes",
+      "value": "[101, 115, 99, 114, 111, 119]"
     },
     {
       "name": "LOCK_STATE_TAG",
-      "type": {
-        "defined": "&[u8]"
-      },
-      "value": "b\"lock\""
+      "type": "bytes",
+      "value": "[108, 111, 99, 107]"
     }
   ],
   "instructions": [
@@ -487,11 +470,6 @@ export const IDL: Staking = {
   "errors": [
     {
       "code": 6000,
-      "name": "TokensStillLocked",
-      "msg": "Error: You need to wait at least lockup period."
-    },
-    {
-      "code": 6001,
       "name": "InsufficientFunds",
       "msg": "Error: Your balance is not enough."
     }

@@ -5,7 +5,7 @@ use super::*;
 /// This function can throw following errors:
 ///   - Insufficient Funds (when User vault has lesser value than staked value
 ///     passed by the user).
-pub fn stake(ctx: Context<Stake>, staked_amount: u64) -> Result<()> {
+pub fn stake_amount(ctx: Context<Stake>, staked_amount: u64) -> Result<()> {
     // Check user balance first
     require!(
         ctx.accounts.user_vault.amount >= staked_amount,

@@ -5,7 +5,7 @@ use super::*;
 /// This function can throw following errors:
 ///   - Insufficient Funds (when withdrawal amount has greater value than
 ///     staked value).
-pub fn unstake(ctx: Context<Unstake>, withdrawal_amount: u64) -> Result<()> {
+pub fn unstake_amount(ctx: Context<Unstake>, withdrawal_amount: u64) -> Result<()> {
     let stake_state = &mut ctx.accounts.stake_state;
     let global_state = &mut ctx.accounts.global_state;
 
