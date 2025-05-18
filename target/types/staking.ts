@@ -1,112 +1,184 @@
+/**
+ * Program IDL in camelCase format in order to be used in JS/TS.
+ *
+ * Note that this is only a type helper and is not the actual IDL. The original
+ * IDL can be found at `target/idl/staking.json`.
+ */
 export type Staking = {
-  "version": "0.1.0",
-  "name": "staking",
-  "constants": [
-    {
-      "name": "SECONDS_PER_DAY",
-      "type": "u64",
-      "value": "60 * 60 * 24"
-    },
-    {
-      "name": "GLOBAL_STATE_TAG",
-      "type": "bytes",
-      "value": "[103, 108, 111, 98, 97, 108]"
-    },
-    {
-      "name": "ESCROW_TAG",
-      "type": "bytes",
-      "value": "[101, 115, 99, 114, 111, 119]"
-    },
-    {
-      "name": "LOCK_STATE_TAG",
-      "type": "bytes",
-      "value": "[108, 111, 99, 107]"
-    }
-  ],
+  "address": "9WdiiK983NAUBarCxC4xzZqVJn6LHPea8hXy9J5cSbmj",
+  "metadata": {
+    "name": "staking",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "staking"
+  },
   "instructions": [
     {
       "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
       "accounts": [
         {
           "name": "globalState",
-          "isMut": true,
-          "isSigner": false
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "escrowAccount",
-          "isMut": true,
-          "isSigner": false
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "authority",
-          "isMut": true,
-          "isSigner": true
+          "writable": true,
+          "signer": true
         },
         {
-          "name": "mint",
-          "isMut": false,
-          "isSigner": false
+          "name": "mint"
         },
         {
           "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         },
         {
           "name": "tokenProgram",
-          "isMut": false,
-          "isSigner": false
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
         },
         {
           "name": "rent",
-          "isMut": false,
-          "isSigner": false
+          "address": "SysvarRent111111111111111111111111111111111"
         }
       ],
       "args": []
     },
     {
       "name": "stake",
+      "discriminator": [
+        206,
+        176,
+        202,
+        18,
+        200,
+        209,
+        179,
+        108
+      ],
       "accounts": [
         {
           "name": "globalState",
-          "isMut": true,
-          "isSigner": false
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "stakeState",
-          "isMut": true,
-          "isSigner": false
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  99,
+                  107
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vaultAuthority"
+              }
+            ]
+          }
         },
         {
           "name": "escrowAccount",
-          "isMut": true,
-          "isSigner": false
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "userVault",
-          "isMut": true,
-          "isSigner": false
+          "writable": true
         },
         {
           "name": "vaultAuthority",
-          "isMut": true,
-          "isSigner": true
+          "writable": true,
+          "signer": true
         },
         {
           "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         },
         {
           "name": "tokenProgram",
-          "isMut": false,
-          "isSigner": false
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
         },
         {
           "name": "rent",
-          "isMut": false,
-          "isSigner": false
+          "address": "SysvarRent111111111111111111111111111111111"
         }
       ],
       "args": [
@@ -118,56 +190,105 @@ export type Staking = {
     },
     {
       "name": "unstake",
+      "discriminator": [
+        90,
+        95,
+        107,
+        42,
+        205,
+        124,
+        50,
+        225
+      ],
       "accounts": [
         {
           "name": "globalState",
-          "isMut": true,
-          "isSigner": false
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  108,
+                  111,
+                  98,
+                  97,
+                  108
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "stakeState",
-          "isMut": true,
-          "isSigner": false
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  99,
+                  107
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vaultAuthority"
+              }
+            ]
+          }
         },
         {
           "name": "escrowAccount",
-          "isMut": true,
-          "isSigner": false
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "userVault",
-          "isMut": true,
-          "isSigner": false
+          "writable": true
         },
         {
           "name": "rewardAccount",
-          "isMut": true,
-          "isSigner": false
+          "writable": true
         },
         {
           "name": "vaultAuthority",
-          "isMut": true,
-          "isSigner": true
+          "writable": true,
+          "signer": true
         },
         {
           "name": "rewardAuthority",
-          "isMut": true,
-          "isSigner": true
+          "writable": true,
+          "signer": true
         },
         {
           "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
+          "address": "11111111111111111111111111111111"
         },
         {
           "name": "tokenProgram",
-          "isMut": false,
-          "isSigner": false
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
         },
         {
           "name": "rent",
-          "isMut": false,
-          "isSigner": false
+          "address": "SysvarRent111111111111111111111111111111111"
         }
       ],
       "args": [
@@ -181,12 +302,47 @@ export type Staking = {
   "accounts": [
     {
       "name": "globalState",
+      "discriminator": [
+        163,
+        46,
+        74,
+        168,
+        216,
+        123,
+        133,
+        98
+      ]
+    },
+    {
+      "name": "stakeState",
+      "discriminator": [
+        108,
+        10,
+        236,
+        72,
+        1,
+        88,
+        133,
+        92
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "insufficientFunds",
+      "msg": "Error: Your balance is not enough."
+    }
+  ],
+  "types": [
+    {
+      "name": "globalState",
       "type": {
         "kind": "struct",
         "fields": [
           {
             "name": "mint",
-            "type": "publicKey"
+            "type": "pubkey"
           },
           {
             "name": "totalStakedAmount",
@@ -228,250 +384,26 @@ export type Staking = {
       }
     }
   ],
-  "errors": [
-    {
-      "code": 6000,
-      "name": "InsufficientFunds",
-      "msg": "Error: Your balance is not enough."
-    }
-  ]
-};
-
-export const IDL: Staking = {
-  "version": "0.1.0",
-  "name": "staking",
   "constants": [
     {
-      "name": "SECONDS_PER_DAY",
-      "type": "u64",
-      "value": "60 * 60 * 24"
-    },
-    {
-      "name": "GLOBAL_STATE_TAG",
-      "type": "bytes",
-      "value": "[103, 108, 111, 98, 97, 108]"
-    },
-    {
-      "name": "ESCROW_TAG",
+      "name": "escrowTag",
       "type": "bytes",
       "value": "[101, 115, 99, 114, 111, 119]"
     },
     {
-      "name": "LOCK_STATE_TAG",
+      "name": "globalStateTag",
+      "type": "bytes",
+      "value": "[103, 108, 111, 98, 97, 108]"
+    },
+    {
+      "name": "lockStateTag",
       "type": "bytes",
       "value": "[108, 111, 99, 107]"
-    }
-  ],
-  "instructions": [
-    {
-      "name": "initialize",
-      "accounts": [
-        {
-          "name": "globalState",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "escrowAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "authority",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "mint",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "rent",
-          "isMut": false,
-          "isSigner": false
-        }
-      ],
-      "args": []
     },
     {
-      "name": "stake",
-      "accounts": [
-        {
-          "name": "globalState",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "stakeState",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "escrowAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "userVault",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "vaultAuthority",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "rent",
-          "isMut": false,
-          "isSigner": false
-        }
-      ],
-      "args": [
-        {
-          "name": "stakedAmount",
-          "type": "u64"
-        }
-      ]
-    },
-    {
-      "name": "unstake",
-      "accounts": [
-        {
-          "name": "globalState",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "stakeState",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "escrowAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "userVault",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "rewardAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "vaultAuthority",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "rewardAuthority",
-          "isMut": true,
-          "isSigner": true
-        },
-        {
-          "name": "systemProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "tokenProgram",
-          "isMut": false,
-          "isSigner": false
-        },
-        {
-          "name": "rent",
-          "isMut": false,
-          "isSigner": false
-        }
-      ],
-      "args": [
-        {
-          "name": "amount",
-          "type": "u64"
-        }
-      ]
-    }
-  ],
-  "accounts": [
-    {
-      "name": "globalState",
-      "type": {
-        "kind": "struct",
-        "fields": [
-          {
-            "name": "mint",
-            "type": "publicKey"
-          },
-          {
-            "name": "totalStakedAmount",
-            "type": "u64"
-          }
-        ]
-      }
-    },
-    {
-      "name": "stakeState",
-      "docs": [
-        "The struct containing instructions for staking"
-      ],
-      "type": {
-        "kind": "struct",
-        "fields": [
-          {
-            "name": "stakedAmount",
-            "docs": [
-              "Initial staked amount"
-            ],
-            "type": "u64"
-          },
-          {
-            "name": "stakedAt",
-            "docs": [
-              "Timestamp when token is going to staked"
-            ],
-            "type": "i64"
-          },
-          {
-            "name": "rewards",
-            "docs": [
-              "Rewards earned"
-            ],
-            "type": "u64"
-          }
-        ]
-      }
-    }
-  ],
-  "errors": [
-    {
-      "code": 6000,
-      "name": "InsufficientFunds",
-      "msg": "Error: Your balance is not enough."
+      "name": "secondsPerDay",
+      "type": "u64",
+      "value": "86400"
     }
   ]
 };

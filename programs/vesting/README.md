@@ -4,8 +4,8 @@ The contract that allows to lock the SPL Tokens for specific period of time and 
 
 ## Contract Addresses
 
-- mainnet: `ByFJEZWdpswG6LiGTCPRJnyAFeUpXcYRe24tzuNPwkMY`
-- devnet: `ByFJEZWdpswG6LiGTCPRJnyAFeUpXcYRe24tzuNPwkMY`
+- mainnet: `4gvGr6xShLwiL1whWTtJWraAxL82fPAka1fqCrxEujhT`
+- devnet: `4gvGr6xShLwiL1whWTtJWraAxL82fPAka1fqCrxEujhT`
 
 ## Function paramters
 

@@ -1,3 +1,4 @@
+#![allow(unexpected_cfgs)]
 use crate::{constants::*, errors::*, instructions::*, states::*};
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, Mint, Token, TokenAccount, Transfer};
@@ -7,7 +8,7 @@ mod errors;
 mod instructions;
 mod states;
 
-declare_id!("2sbJrDbu2ansQ6NZ78GrBb3NYGaGcKpF5WJQCo581uvD");
+declare_id!("9WdiiK983NAUBarCxC4xzZqVJn6LHPea8hXy9J5cSbmj");
 
 #[program]
 pub mod staking {

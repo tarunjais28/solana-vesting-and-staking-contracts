@@ -2,12 +2,12 @@
 seeds = false
 
 [programs.localnet]
-vesting = "ByFJEZWdpswG6LiGTCPRJnyAFeUpXcYRe24tzuNPwkMY"
-staking = "2sbJrDbu2ansQ6NZ78GrBb3NYGaGcKpF5WJQCo581uvD"
+vesting = "4gvGr6xShLwiL1whWTtJWraAxL82fPAka1fqCrxEujhT"
+staking = "9WdiiK983NAUBarCxC4xzZqVJn6LHPea8hXy9J5cSbmj"
 
 [programs.devnet]
-vesting = "ByFJEZWdpswG6LiGTCPRJnyAFeUpXcYRe24tzuNPwkMY"
-staking = "2sbJrDbu2ansQ6NZ78GrBb3NYGaGcKpF5WJQCo581uvD"
+vesting = "4gvGr6xShLwiL1whWTtJWraAxL82fPAka1fqCrxEujhT"
+staking = "9WdiiK983NAUBarCxC4xzZqVJn6LHPea8hXy9J5cSbmj"
 
 [registry]
 url = "https://anchor.projectserum.com"
